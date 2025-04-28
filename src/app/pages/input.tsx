@@ -20,12 +20,12 @@ function Input({ onUsernameChange, userData }: { onUsernameChange: (username: st
     };
 
     return (
-        <div className="flex flex-col items-center p-10 bg-gray-900 w-291 h-180 rounded-lg shadow-lg">
-            <div className="flex flex-row items-center mb-4 gap-7">
+        <div className="flex flex-col items-center p-10  bg-gray-900 md:w-291  md:h-180  w-90 h-full rounded-lg shadow-lg">
+            <div className="flex flex-row items-center  mb-4 gap-7">
                 <img src="/git.png" alt="GitHub Logo" width={100} height={"auto"} className="rounded-[50%] mb-4" />
             <h1 className="text-5xl" >Perfil <strong>GitHub</strong></h1>
             </div>
-            <div className='flex items-center border border-gray-300 rounded w-64"'>
+            <div className='flex items-center border border-gray-300 rounded w-67'>
 
             <input
                 type="text"
@@ -36,19 +36,23 @@ function Input({ onUsernameChange, userData }: { onUsernameChange: (username: st
                 onKeyDown={handleKeyDown}
                 />
             <button
-                className="bg-sky-500 text-white rounded p-2 hover:bg-sky-600"
+                className="bg-sky-500 text-white p-2 rounded hover:bg-sky-600"
                 onClick={handleButtonClick}
                 >
-                <CiSearch className='w-10 h-6 text-sm ' />
+                <CiSearch className='w-6 h-6' />
             </button>
                 </div>
             {userData && (
-                <div className="mt-4 bg-white p-4 rounded shadow-md flex items-center text-gray-900 w-200 h-100">
-                    <img src={userData.avatar_url} alt="Avatar" width={300} height={"auto"} className="rounded-[50%] border-3 border-sky-500 " />
+                <div className="flex flex-col md:flex-row mt-6 bg-white p-10 rounded shadow-md flex  items-center text-gray-900 md:w-200  md:h-100 w-full h-full ">
+                    <img
+                        src={userData.avatar_url}
+                        alt="Avatar"
+                        className="md:w-70 md:h-auto w-32 h-32 rounded-full border-4 border-sky-500 mb-4 sm:mb-0 sm:mr-4"
+                    />
                     <div className="flex flex-col align-items-center justify-center ml-4">
 
-                    <h2 className="text-center text-2xl text-sky-700 mb-2 ">{userData.name}</h2>
-                    <p className="">{userData.bio}</p>
+                    <h2 className="text-center md:text-3xl text-xl text-sky-700 mb-2 ">{userData.name}</h2>
+                    <p className="md:text-lg text-sm">{userData.bio}</p>
                     </div>
                 </div>
             )}
