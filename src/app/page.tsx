@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import GitHubUser from "./pages/gitHubUser";
-import Input from "./pages/input";
+import About from "./pages/about";
 
 export default function Home() {
   const [username, setUsername] = useState<string>("");
@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Input onUsernameChange={setUsername} userData={userData} />
+      <About onUsernameChange={setUsername} userData={userData} />
       <GitHubUser username={username} setUserData={setUserData} />
     </main>
   );

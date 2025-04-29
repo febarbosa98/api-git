@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { CiSearch } from "react-icons/ci";
 
-function Input({ onUsernameChange, userData }: { onUsernameChange: (username: string) => void; userData: any }) {
+function About({ onUsernameChange, userData }: { onUsernameChange: (username: string) => void; userData: any }) {
     const [localUsername, setLocalUsername] = useState("");
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,7 +25,7 @@ function Input({ onUsernameChange, userData }: { onUsernameChange: (username: st
                 <img src="/git.png" alt="GitHub Logo" width={100} height={"auto"} className="rounded-[50%] mb-4" />
             <h1 className="text-5xl" >Perfil <strong>GitHub</strong></h1>
             </div>
-            <div className='flex items-center border border-gray-300 rounded w-67'>
+            <div className='flex items-center border border-gray-300 rounded md:w-67 w-full'>
 
             <input
                 type="text"
@@ -39,11 +39,11 @@ function Input({ onUsernameChange, userData }: { onUsernameChange: (username: st
                 className="bg-sky-500 text-white p-2 rounded hover:bg-sky-600"
                 onClick={handleButtonClick}
                 >
-                <CiSearch className='w-6 h-6' />
+                <CiSearch className='w-6 h-6 ' />
             </button>
                 </div>
             {userData && (
-                <div className="flex flex-col md:flex-row mt-6 bg-white p-10 rounded shadow-md flex  items-center text-gray-900 md:w-200  md:h-100 w-full h-full ">
+                <div className="flex-col md:flex-row mt-6 bg-white p-10 rounded shadow-md flex  items-center text-gray-900 md:w-200  md:h-100 w-full h-full ">
                     <img
                         src={userData.avatar_url}
                         alt="Avatar"
@@ -60,4 +60,4 @@ function Input({ onUsernameChange, userData }: { onUsernameChange: (username: st
     );
 }
  
-export default Input;
+export default About;
