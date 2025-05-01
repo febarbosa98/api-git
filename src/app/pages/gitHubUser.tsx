@@ -7,6 +7,8 @@ function GitHubUser({ username, setUserData }: { username: string; setUserData: 
     const [repos, setRepos] = useState<any[]>([]);
     const [error, setError] = useState<string | null>(null);
 
+    
+
     useEffect(() => {
         if (!username) return;
 
@@ -32,6 +34,8 @@ function GitHubUser({ username, setUserData }: { username: string; setUserData: 
 
         fetchUserData();
     }, [username, setUserData]);
+
+    
 
     if (error) {
         return <div className="text-red-500">{error}</div>;
